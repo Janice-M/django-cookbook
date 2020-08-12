@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'graphene_django',
     'cookbook.ingredients',
     'django.contrib.admin',
     'django.contrib.auth',
