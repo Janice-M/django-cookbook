@@ -28,3 +28,5 @@ class Query (graphene.ObjectType):
             return Category.objects.get(name=name)
         except Category.DoesNotExist:
             return None
+            
+schema = graphene.Schema(query=Query)
