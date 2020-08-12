@@ -22,3 +22,9 @@ class Query (graphene.ObjectType):
         #optimizing query count using resolve method
         
         return Ingredient.objects.select_related("category").all()
+        
+    def resolve_category_by_name (root, info, name):
+        try:
+            return Category.objects.get(name=name)
+        except Category.DoesNotExist:
+            return None
