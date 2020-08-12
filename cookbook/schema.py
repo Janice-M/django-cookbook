@@ -9,3 +9,8 @@ class CategoryType(DjangoObjectType):
         model=Category
         fields = ("id", "name" ,"ingredients")
         
+class IngredientType(DjangoObjectType):
+    class Meta:
+        model= Ingredient
+        fields= ("id", "name", "notes", "category")
+        
