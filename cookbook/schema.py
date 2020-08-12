@@ -16,4 +16,9 @@ class IngredientType(DjangoObjectType):
         
 class Query (graphene.ObjectType):
     all_ingredients= graphene.List(IngredientType)
-    category_by_name = graphene.Field(CategoryType, name=graphene.String(required=True))
+    category_by_name = graphene.Field(CategoryType, name=graphene.String(required=True)
+    
+    def resolve_all_ingredients(root, info):
+        #optimizing query count using resolve method
+        
+        return Ingredient.objects.select_related("category").all()
