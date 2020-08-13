@@ -12,7 +12,7 @@ class CategoryType(DjangoObjectType):
 class IngredientType(DjangoObjectType):
     class Meta:
         model= Ingredient
-        fields= ("id", "name", "", "category")
+        fields= ("id", "name", "notes", "category")
         
 class Query (graphene.ObjectType):
     all_ingredients= graphene.List(IngredientType)
